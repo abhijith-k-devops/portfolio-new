@@ -65,13 +65,14 @@ jobs:
           VITE_REPO_NAME: portfolio-new
         run: npm run build
 
-      - name: Deploy to gh-pages (only on main push)
+      - name: Deploy to main (only on main push)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add dist/
+          git commit -m "Deploy: built assets for main branch" || true
+          git push origin main
 
       - name: Verify deployment ready (PR check)
         if: github.event_name == 'pull_request'
