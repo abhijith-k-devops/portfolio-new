@@ -70,13 +70,14 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          # Copy built dist to root for GitHub Pages to serve
-          cp dist/index.html index.html
+          # Copy built assets to root for GitHub Pages to serve
           rm -rf assets logo.svg 2>/dev/null || true
           cp -r dist/assets . 2>/dev/null || true
           cp dist/logo.svg . 2>/dev/null || true
-          git add -f index.html assets logo.svg
-          git commit -m "Deploy: build output for main branch [skip ci]" || true
+          # Create a .gitkeep in dist to track it
+          touch dist/.gitkeep
+          git add -f assets logo.svg dist/.gitkeep
+          git commit -m "Deploy: update assets [skip ci]" || true
           git push origin main
 
       - name: Verify deployment ready (PR check)
