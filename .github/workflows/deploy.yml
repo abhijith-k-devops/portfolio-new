@@ -68,10 +68,15 @@ jobs:
       - name: Deploy to main (only on main push)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add dist/
-          git commit -m "Deploy: built assets for main branch" || true
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          # Copy built dist to root for GitHub Pages to serve
+          cp dist/index.html index.html
+          rm -rf assets logo.svg 2>/dev/null || true
+          cp -r dist/assets . 2>/dev/null || true
+          cp dist/logo.svg . 2>/dev/null || true
+          git add index.html assets logo.svg
+          git commit -m "Deploy: build output for main branch [skip ci]" || true
           git push origin main
 
       - name: Verify deployment ready (PR check)
