@@ -75,7 +75,7 @@ jobs:
           rm -rf assets logo.svg 2>/dev/null || true
           cp -r dist/assets . 2>/dev/null || true
           cp dist/logo.svg . 2>/dev/null || true
-          git add index.html assets logo.svg
+          git add -f index.html assets logo.svg
           git commit -m "Deploy: build output for main branch [skip ci]" || true
           git push origin main
 
