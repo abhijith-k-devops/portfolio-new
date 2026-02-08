@@ -29,7 +29,7 @@
   @apply bg-picto-primary border-0 text-white hover:scale-[102%] hover:bg-picto-primary-dark transition-all duration-500;
 }
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .content {
