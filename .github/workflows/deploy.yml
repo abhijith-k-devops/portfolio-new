@@ -1,4 +1,4 @@
-name: Build and Deploy to gh-pages
+name: Build and Deploy (main)
 
 on:
   push:
@@ -7,39 +7,62 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build Check
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build
 
-  deploy:
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+  deploy-to-main:
     needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    name: Deploy Built Files to main
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - run: npm ci
-      - run: npm run build
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Copy built files to repo root and commit
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          rm -rf assets logo.svg || true
+          cp -r dist/assets .
+          cp -f dist/logo.svg ./logo.svg || true
+          cp -f dist/index.html ./index.html
+          git add -f index.html assets logo.svg || true
+          git commit -m "chore(deploy): publish built site to main [skip ci]" || true
+          git push origin main || true
+
 name: Build and Deploy to GitHub Pages
 
 on:
