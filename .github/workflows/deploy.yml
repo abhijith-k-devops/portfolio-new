@@ -1,68 +1,3 @@
-name: Build and Deploy (main)
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Build Check
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-  deploy-to-main:
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    name: Deploy Built Files to main
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Copy built files to repo root and commit
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          rm -rf assets logo.svg || true
-          cp -r dist/assets .
-          cp -f dist/logo.svg ./logo.svg || true
-          cp -f dist/index.html ./index.html
-          git add -f index.html assets logo.svg || true
-          git commit -m "chore(deploy): publish built site to main [skip ci]" || true
-          git push origin main || true
-
 name: Build and Deploy to GitHub Pages
 
 on:
@@ -72,16 +7,17 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
-  checks: write
-  statuses: write
+
+env:
+  VITE_REPO_NAME: portfolio-new
 
 jobs:
   build:
+    name: Build check (PRs & pushes)
     runs-on: ubuntu-latest
-    name: Build Check
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -96,22 +32,21 @@ jobs:
         run: npm ci
 
       - name: Build
-        env:
-          VITE_REPO_NAME: portfolio-new
         run: npm run build
 
-      - name: Check build output
+      - name: Validate build output
         run: |
-          if [ ! -f dist/index.html ]; then
+          if [ ! -d dist ] || [ ! -f dist/index.html ]; then
             echo "Build failed: dist/index.html not found"
             exit 1
           fi
-          echo "✅ Build successful"
+          echo "✅ Build produced dist/"
 
   deploy:
-    needs: build
+    name: Build and deploy (main)
     runs-on: ubuntu-latest
-    name: Deploy to GitHub Pages
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -120,36 +55,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build
-        env:
-          VITE_REPO_NAME: portfolio-new
         run: npm run build
 
-      - name: Deploy to main (only on main push)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          # Copy built assets to root for GitHub Pages to serve
-          rm -rf assets logo.svg 2>/dev/null || true
-          cp -r dist/assets . 2>/dev/null || true
-          cp dist/logo.svg . 2>/dev/null || true
-          # Create a .gitkeep in dist to track it
-          touch dist/.gitkeep
-          git add -f assets logo.svg dist/.gitkeep
-          git commit -m "Deploy: update assets [skip ci]" || true
-          git push origin main
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
 
-      - name: Verify deployment ready (PR check)
-        if: github.event_name == 'pull_request'
-        run: |
-          if [ ! -f dist/index.html ]; then
-            echo "❌ Deployment would fail: dist/index.html not found"
-            exit 1
-          fi
-          echo "✅ Deployment verified: ready to deploy"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+
