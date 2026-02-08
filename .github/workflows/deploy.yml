@@ -21,11 +21,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '18.x'
           cache: 'npm'
 
       - name: Install dependencies
@@ -34,6 +36,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Debug: node & repo info
+        run: |
+          node -v || true
+          npm -v || true
+          pwd
+          ls -la
+          echo "--- package.json ---"
+          cat package.json || true
       - name: Validate build output
         run: |
           if [ ! -d dist ] || [ ! -f dist/index.html ]; then
@@ -50,11 +60,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '18.x'
 
       - name: Install dependencies
         run: npm ci
