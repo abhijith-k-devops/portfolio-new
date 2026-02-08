@@ -91,9 +91,10 @@ const NavBar = () => {
             duration={900}
             className="flex items-center border-0 lg:max-xxl:ps-5"
           >
-            <p className="text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
-              Abhijith
-            </p>
+            <h2 className="text-xl sm:text-3xl font-semibold">
+              <span className="text-black">abhijith</span>
+              <span className="text-picto-primary text-2xl sm:text-4xl">.</span>
+            </h2>
           </Link>
         </div>
 
@@ -103,7 +104,7 @@ const NavBar = () => {
           </ul>
           <p className="">
             <Link
-              className="btn btn-sm xs:btn-md sm:btn-lg btn-primary"
+              className="btn btn-sm xs:btn-md sm:btn-lg btn-primary font-medium text-sm"
               href="#contact"
               to={`contact`}
               smooth={true}
