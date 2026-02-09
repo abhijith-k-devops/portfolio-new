@@ -21,6 +21,18 @@ const informationSummaryData = [
   },
 ];
 
+const techIcons = [
+  { id: 1, src: "../../assets/icons/android-studio.svg", alt: "Android" },
+  { id: 2, src: "../../assets/icons/kotlin.svg", alt: "Kotlin" },
+  { id: 3, src: "../../assets/icons/java.svg", alt: "Java" },
+  { id: 4, src: "../../assets/icons/compose.svg", alt: "Compose" },
+  { id: 5, src: "../../assets/icons/graphQL.svg", alt: "GraphQL" },
+  { id: 6, src: "../../assets/icons/firebase.svg", alt: "Firebase" },
+  { id: 7, src: "../../assets/icons/figma.svg", alt: "Figma" },
+  { id: 8, src: "../../assets/icons/photoshop.svg", alt: "Photoshop" },
+  {id: 9, src: "../../assets/icons/illustrator.svg", alt: "Illustrator" },
+];
+
 const Introduction = () => {
   return (
     <div
@@ -46,6 +58,13 @@ const Introduction = () => {
               Say Hello!
             </a>
           </p>
+        </div>
+        <div className="flex flex-wrap gap-4 mt-6">
+            {techIcons.map((icon) => (
+              <div className="bg-white shadow-md rounded-xl p-2 hover:scale-110 transition">
+                <img src={icon.src} alt={icon.name} className="h-8 sm:h-10" />
+              </div>
+            ))}
         </div>
         <div className="mx-auto lg:mx-0 relative">
           <div className="grid max-xxs:grid-flow-col grid-cols-3 w-fit mt-10 gap-1">
