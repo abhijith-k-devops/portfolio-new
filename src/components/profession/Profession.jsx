@@ -3,21 +3,21 @@ import Roles from "./Roles";
 const rolesData = [
   {
     id: 1,
-    title: "User Experience (UX)",
+    title: "Android Development",
     description:
-      "I design intuitive and enjoyable experiences by understanding user needs, conducting research, and creating wireframes and prototypes that enhance usability.",
+      "I build scalable, high-performance Android applications using Kotlin, MVVM, and Clean Architecture — delivering clean, maintainable code with seamless user experiences.",
   },
   {
     id: 2,
-    title: "User Interface (UI)",
+    title: "Backend Services Development",
     description:
-      "I craft visually appealing and consistent interfaces, focusing on layout, color, and typography to ensure a seamless and engaging user journey.",
+      "I develop robust backend services using PHP Laravel, and REST APIs, ensuring secure, scalable, and high-performance systems that support mobile and web applications.",
   },
   {
     id: 3,
-    title: "Web Development",
+    title: "UI/UX Designing",
     description:
-      "I build responsive and high-performance web applications using modern technologies, ensuring accessibility, scalability, and maintainability.",
+      "I craft intuitive, user-centric interfaces with a strong focus on usability, accessibility, and performance — turning complex workflows into seamless digital experiences.",
   },
 ];
 
@@ -31,18 +31,14 @@ const Profession = () => {
         <p className="section-title max-md:text-center">What I do?</p>
         <div className="mt-6 text-[14px]">
           <p className="text-xs sm:text-lg font-normal text-gray-400 mb-4">
-            I specialize in designing user experiences, crafting engaging
-            interfaces, and building robust web applications that deliver value
-            and usability.
+            I design and develop high-performance Android applications that are scalable, maintainable, and user-focused. Using Kotlin, Java, MVVM, Clean Architecture, and Jetpack Compose, I transform ideas into production-ready mobile solutions.
           </p>
           <p className="text-xs sm:text-lg font-normal text-gray-400">
-            My approach combines creativity and technical expertise to deliver
-            solutions that are both visually appealing and highly functional for
-            users.
+            Beyond development, I craft intuitive UI/UX experiences, optimize performance, integrate advanced features like Bluetooth and payment systems, and ensure every product delivers real business value.
           </p>
         </div>
         <a
-          href="#!"
+          href="mailto:abhijith.k.devops@gmail.com"
           className="mt-5 md:mt-12.5 btn btn-primary text-white w-fit md:py-3 md:px-6 text-[12px] sm:text-[16px] font-semibold max-md:mx-auto max-md:mb-5"
         >
           Say Hello!

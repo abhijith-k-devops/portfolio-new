@@ -70,15 +70,29 @@ const Introduction = () => {
             </a>
           </p>
         </div>
-        <div className="flex flex-wrap gap-4 mt-6">
-            {techIcons.map((icon) => (
-              <div className="bg-white shadow-md rounded-xl p-2 hover:scale-110 transition">
-                <img src={icon.src} alt={icon.alt} className="h-8 sm:h-10" />
-              </div>
-            ))}
+        <div className="pt-13 me-31.5 w-full lg:w-auto transition-all duration-500 grid grid-cols-6 sm:grid-cols-6 md:grid-cols-8 gap-2">
+          {techIcons.map((item, index) => (
+            <div
+              key={index}
+              className="
+                w-14 h-14
+                rounded-2xl
+                bg-white
+                flex items-center justify-center
+                shadow-[6px_6px_12px_rgba(0,0,0,0.06),_-6px_-6px_12px_rgba(255,255,255,0.8)]
+                hover:shadow-2xl
+              "
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="w-8 h-8 object-contain"
+              />
+            </div>
+          ))}
         </div>
         <div className="mx-auto lg:mx-0 relative">
-          <div className="grid max-xxs:grid-flow-col grid-cols-3 w-fit mt-10 gap-1">
+          <div className="grid max-xxs:grid-flow-col grid-cols-3 w-fit mt-10 gap-6">
             {informationSummaryData.map((item) => (
               <InformationSummary key={item.id} item={item} />
             ))}

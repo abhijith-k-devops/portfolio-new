@@ -10,30 +10,38 @@ import "./testimonial.css";
 const testimonialData = [
   {
     message:
-      "Working with this team was a fantastic experience. Their attention to detail and commitment to quality exceeded our expectations.",
-    quote: `From the initial consultation to the final delivery, every step was handled professionally. The end result was a product that not only met our needs but also impressed our stakeholders. Highly recommended!`,
-    name: "Esther Howard",
-    designation: "Managing Director, ABC Company",
+      "",
+    quote: `Abhijit has taken the lead on Activities initiatives in the Expedia project, offering valuable solutions to enhance Android architecture. His contributions, particularly in optimizing the performance of the Activities pages, have been well appreciated by the customer for their impact and effectiveness.`,
+    name: "Jyoti Balwani",
+    designation: "Senior Manager - Engineering, Expedia Group",
   },
   {
     message:
-      "Their expertise in UI/UX design helped us transform our digital presence and improve user engagement.",
-    quote: `The team demonstrated a deep understanding of our requirements and delivered a solution that was both visually appealing and highly functional. Communication was clear throughout the project.`,
-    name: "Ali Haider",
-    designation: "COO, XYZ Company",
+      "",
+    quote: `Shoutout to Abhijit, who went above and beyond to ensure RAAO readiness on Android  for Bug Bash & UAT. We got last min feedback on his PR, which required re-work on the whole implementation approach. Even while it was a bummer, he took it positively and he worked through the weekend to ensure we are not delayed for UAT and followed up on his PRs. He also has been pairing with Ribina since she has joined us and has helped her ramp up on our stack really well.​
+Thank you for your contributions, Abhijit. Keep them coming!`,
+    name: "Jyoti Balwani",
+    designation: "Senior Manager - Engineering, Expedia Group",
   },
   {
     message:
-      "Professional, reliable, and creative—everything you want in a development partner.",
-    quote: `They delivered our project on time and went above and beyond to ensure our satisfaction. The new features have made a significant difference for our users. We look forward to working together again.`,
-    name: "Elon Max",
-    designation: "Managing Director, KFC Company",
+      "",
+    quote: `Upon joining the Expedia Activities team, Abhijith Kottayi emerged as the sole Android developer representing IBS in the Activities team. Through dedicated efforts, he navigated the onboarding process and established a strong rapport with the customer team. Abhijith consistently delivers features with exceptional quality and demonstrates effective collaboration with clients. In a remarkably short time, he has become an integral and valued member of the customer team.`,
+    name: "Jasdev Singh",
+    designation: "Senior Director - Engineering, Expedia Group",
   },
+  {
+    message:
+      "",
+    quote: `We appreciate your inspiring journey during the Traveler Native Hackathon. It was fantastic to see your idea and implementation for the Hackathon project. The Hackathon not only allows us to explore new ideas but also fosters great teamwork. Your dedication and creativity have truly made an impact. We look forward to seeing your continued innovation in future Hackathons!`,
+    name: "Anupama Joseph",
+    designation: "Lead Manager - Engineering, IBS Software Private Limited",
+  }
 ];
 
 const Testimonial = () => {
   return (
-    <div className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25">
+    <div className="mt-20 flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25">
       <div className="w-full h-full cursor-grab">
         <p className="section-title mb-6 text-center">Testimonial</p>
         <Swiper

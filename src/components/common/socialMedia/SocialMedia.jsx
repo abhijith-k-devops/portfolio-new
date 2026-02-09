@@ -8,11 +8,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const socialIcons = [
-  { icon: faFacebookF, link: "#!" },
-  { icon: faDribbble, link: "#!" },
-  { icon: faInstagram, link: "#!" },
-  { icon: faLinkedin, link: "#!" },
-  { icon: faBehance, link: "#!" },
+  { icon: faFacebookF, link: "https://www.facebook.com/abhijithjas/" },
+  { icon: faDribbble, link: "https://dribbble.com/abhijith-kottayi" },
+  { icon: faInstagram, link: "https://www.instagram.com/ft.4bhijit" },
+  { icon: faLinkedin, link: "https://www.linkedin.com/in/abhijith-kottayi-610712145/" },
+  { icon: faBehance, link: "https://www.behance.net/abhijithkottayi" },
 ];
 
 const SocialMedia = () => {

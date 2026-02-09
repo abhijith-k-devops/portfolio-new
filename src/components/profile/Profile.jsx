@@ -39,13 +39,7 @@ const Profile = () => {
             className={`text-xs xs:text-[16px] lg:text-lg font-normal max-md:text-center text-gray-600`}
           >
             <p className={``}>
-              I design and develop services for customers specializing creating
-              stylish, modern websites, web services and online stores. My
-              passion is to design digital user experiences.
-            </p>
-            <p className="mt-3">
-              I design and develop services for customers specializing creating
-              stylish, modern websites, web services.
+              Android Developer & UI/UX Designer with 8+ years of experience building scalable, high-performance mobile applications using Kotlin, Java, MVVM, Clean Architecture, and Jetpack Compose. Delivered multiple production-ready apps on the Play Store, with expertise in POS systems, Bluetooth integrations, payment gateways, and analytics-driven solutions. Passionate about clean code, intuitive design, and crafting impactful digital experiences.
             </p>
           </div>
           <div className="mt-8 flex max-md:justify-center">
@@ -57,7 +51,7 @@ const Profile = () => {
             </a>
             <a
               className={`btn xxs:btn-lg px-6 max-xs:px-2 xxs:py-3 hover:border-picto-primary bg-white duration-300 transition-all hover:text-picto-primary  ms-4 text-xs xxs:text-[14px] sm:text-[16px]`}
-              href="#!"
+              href="./assets/Abhijith_Kottayi_Resume.pdf"
             >
               <FontAwesomeIcon icon={faDownload} /> Download CV
             </a>

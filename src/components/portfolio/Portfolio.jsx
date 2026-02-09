@@ -10,55 +10,55 @@ const projectData = [
   {
     id: 1,
     image: card1,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "Android",
+    title: "Expedia",
     description:
-      "I focus on crafting smooth, responsive interfaces that balance aesthetic appeal with practical functionality.",
+      "Worked on the Expedia Android app, a high-traffic travel application used by millions globally. Contributed to the development and enhancement of key modules including Things to Do, activity search, prebooking flows, postbooking flow, Flights details page, accessibility support, and analytics instrumentation. Worked on optimizing app performance, improving user experience, and ensuring the app's stability and scalability to handle large user traffic.",
     link: "#!",
   },
   {
     id: 2,
     image: card2,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "Android",
+    title: "Nymbl Vansales",
     description:
-      "Designed an intuitive dashboard for product management, emphasizing clarity and user efficiency.",
+      "Built and delivered an offline-first Android POS application designed for sales agents operating in low or no network environments. Led the implementation of Room-based local data storage with secure server synchronization, integrated inbuilt and BLE receipt printing, and optimized performance for Sunmi V1, V2, and other Android POS devices to ensure stability and real-world reliability.",
     link: "#!",
   },
   {
     id: 3,
     image: card3,
     category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    title: "Change Payents",
     description:
-      "Developed a modern admin panel with a focus on usability and seamless navigation for end users and so on.",
+      "Designed and build a user-friendly payment management interface for a fintech application, enabling users to easily view, manage, and track their transactions and payment history with intuitive navigation and clear visual cues. The app was build in Native Android using Jetpack Compose and integrated with multiple payment gateways to provide a seamless and secure user experience.",
     link: "#!",
   },
   {
     id: 4,
     image: card4,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "Android",
+    title: "Kelque",
     description:
-      "Created a responsive dashboard layout that adapts smoothly across devices and screen sizes and so on.",
+      "Kelque is a comprehensive Android application designed to streamline a online news platform. It offers a user-friendly interface for browsing and reading news articles, with features such as personalized news feeds, offline reading, and seamless integration with social media platforms for easy sharing. The app is built using modern Android development practices, ensuring a smooth and engaging user experience.",
     link: "#!",
   },
   {
     id: 5,
     image: card5,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "Flutter",
+    title: "AQR",
     description:
-      "Implemented interactive charts and widgets to visualize product data effectively for stakeholders.",
+      "This is a cross-platform mobile application built using Flutter, designed to provide users with a seamless and intuitive experience across both Android and iOS devices. The app is providing a detailed learing system for fire fighters, with a detailed topic-wise content structure. The app is built with a focus on performance, usability, and accessibility to ensure it meets the needs of its users effectively.",
     link: "#!",
   },
   {
     id: 6,
     image: card6,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "Android",
+    title: "CureShop",
     description:
-      "Enhanced user experience by streamlining workflows and optimizing interface components and so on.",
+      "This is an e-commerce application built for the healthcare industry, designed to provide users with a seamless and convenient shopping experience for medical products and services. The app features a user-friendly interface, secure payment options, and efficient order management to ensure a smooth and reliable shopping experience for customers seeking healthcare products online.",
     link: "#!",
   },
 ];
@@ -74,7 +74,7 @@ const Portfolio = () => {
           <p className="section-title ">Portfolio</p>
           <p className="font-normal text-[18px] max-sm:text-[14px] pt-6 text-gray-400">
             Here's a selection of my recent work, showcasing my skills in
-            creating user-centric and visually appealing interfaces.
+            creating user-centric Android applications and UI/UX designs.
           </p>
         </div>
       </div>
@@ -84,14 +84,6 @@ const Portfolio = () => {
             <Projects data={data} key={index} />
           ))}
         </div>
-      </div>
-      <div className="text-center">
-        <a
-          href="#!"
-          className="btn btn-primary py-3 px-6 mt-12.5 text-center text-[16px] font-semibold"
-        >
-          More Project
-        </a>
       </div>
     </div>
   );

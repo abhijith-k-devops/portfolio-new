@@ -1,7 +1,7 @@
-import img1 from "../../assets/images/blog/blog-1.jpg";
-import img2 from "../../assets/images/blog/blog-2.jpg";
-import img3 from "../../assets/images/blog/blog-3.jpg";
-import img4 from "../../assets/images/blog/blog-4.jpg";
+import img1 from "../../assets/images/blog/blog-1.png";
+import img2 from "../../assets/images/blog/blog-2.png";
+import img3 from "../../assets/images/blog/blog-3.png";
+import img4 from "../../assets/images/blog/blog-4.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import MonoBlog from "./MonoBlog";
@@ -29,49 +29,29 @@ const blogData = [
   {
     id: 1,
     image: img1,
-    date: "22 Oct, 2020",
-    comments: 246,
-    title: "Designing Engaging User Interfaces for Modern Web Apps",
+    date: "27 Jan, 2023 - Present",
+    title: "Lead Solution Engineer",
     link: "#!",
   },
   {
     id: 2,
     image: img2,
-    date: "22 Oct, 2020",
-    comments: 246,
-    title: "Tips for Effective Dashboard Layouts and Usability",
+    date: "02 Feb, 2022 - 25 Jan, 2023",
+    title: "Senior Software Engineer",
     link: "#!",
   },
   {
     id: 3,
     image: img3,
-    date: "22 Oct, 2020",
-    comments: 246,
-    title: "How to Visualize Data for Better Product Decisions",
+    date: "02 Aug, 2018 - 01 Feb, 2022",
+    title: "Senior Software Engineer",
     link: "#!",
   },
   {
     id: 4,
     image: img4,
-    date: "22 Oct, 2020",
-    comments: 246,
-    title: "Responsive Design: Adapting to All Devices Seamlessly",
-    link: "#!",
-  },
-  {
-    id: 5,
-    image: img2,
-    date: "22 Oct, 2020",
-    comments: 246,
-    title: "Streamlining Workflows with UI/UX Best Practices",
-    link: "#!",
-  },
-  {
-    id: 6,
-    image: img1,
-    date: "22 Oct, 2020",
-    comments: 246,
-    title: "Optimizing Interface Components for Performance",
+    date: "01 Jun, 2017 - 31 Jul, 2018",
+    title: "Junior Android Developer",
     link: "#!",
   },
 ];
@@ -80,10 +60,9 @@ const Blog = () => {
   return (
     <div className="content py-25 px-2 relative" id="blog">
       <div className="max-w-135 text-center mx-auto pb-17.5">
-        <p className="section-title pb-6">Blog</p>
+        <p className="section-title pb-6">Work Experience</p>
         <p className="text-xs xs:text-[16px] md:text-lg text-gray-400">
-          Check out my recent blog posts where I share insights on design,
-          development, and the latest industry trends.
+          Take a closer look at my career journey — the products I’ve helped shape, the technologies I’ve mastered, and the impact I’ve delivered as an Android developer.
         </p>
       </div>
       <Swiper
