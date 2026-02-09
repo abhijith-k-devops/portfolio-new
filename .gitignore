@@ -12,7 +12,6 @@ node_modules
 dist
 dist-ssr
 docs
-assets
 logo.svg
 
 # Editor directories and files
