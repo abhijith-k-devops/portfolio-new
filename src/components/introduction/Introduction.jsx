@@ -26,11 +26,12 @@ const techIcons = [
   { id: 2, src: "../../assets/icons/kotlin.svg", alt: "Kotlin" },
   { id: 3, src: "../../assets/icons/java.svg", alt: "Java" },
   { id: 4, src: "../../assets/icons/compose.svg", alt: "Compose" },
-  { id: 5, src: "../../assets/icons/graphQL.svg", alt: "GraphQL" },
+  { id: 5, src: "../../assets/icons/graphql.svg", alt: "GraphQL" },
   { id: 6, src: "../../assets/icons/firebase.svg", alt: "Firebase" },
   { id: 7, src: "../../assets/icons/figma.svg", alt: "Figma" },
-  { id: 8, src: "../../assets/icons/photoshop.svg", alt: "Photoshop" },
-  {id: 9, src: "../../assets/icons/illustrator.svg", alt: "Illustrator" },
+  { id: 8, src: "../../assets/icons/adobe-photoshop.svg", alt: "Photoshop" },
+  {id: 9, src: "../../assets/icons/adobe-illustrator.svg", alt: "Illustrator" },
+  {id: 10, src: "../../assets/icons/visual-studio.svg", alt: "Visual Studio" },
 ];
 
 const Introduction = () => {
