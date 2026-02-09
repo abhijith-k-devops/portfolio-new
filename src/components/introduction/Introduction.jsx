@@ -11,7 +11,7 @@ const informationSummaryData = [
   },
   {
     id: 2,
-    title: "Projects Completed",
+    title: "Projects",
     description: "10+",
   },
   {
@@ -36,14 +36,12 @@ const Introduction = () => {
             </span>
           </p>
           <p className="text-xs xxs:text-lg lg:text-[18px] my-6">
-            I'm an Experienced Android developer based in Kerala, India. I'm specializing in building scalable,
-             high-performance mobile applications. Proven track record of delivering enterprise
-              and consumer-facing solutions with modern architecture patterns and best practices.
+            I am a Android developer and UI/UX designer based in Kerala, India with 8 years of experience.
           </p>
           <p className="text-center lg:text-start">
             <a
-              className="btn-primary btn btn-xs xxs:btn-lg text-white"
-              href="mailto:example@gmail.com"
+              className="btn-primary btn btn-xs xxs:btn-lg text-white font-semibold"
+              href="mailto:abhijith.k.devops@gmail.com"
             >
               Say Hello!
             </a>
