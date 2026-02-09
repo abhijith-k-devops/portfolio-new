@@ -1,4 +1,14 @@
 import person from "../../assets/images/person.png";
+import androidStudio from "../../assets/icons/android-studio.svg";
+import kotlin from "../../assets/icons/kotlin.svg";
+import java from "../../assets/icons/java.svg";
+import compose from "../../assets/icons/compose.svg";
+import graphql from "../../assets/icons/graphql.svg";
+import firebase from "../../assets/icons/firebase.svg";
+import figma from "../../assets/icons/figma.svg";
+import photoshop from "../../assets/icons/adobe-photoshop.svg";
+import illustrator from "../../assets/icons/adobe-illustrator.svg";
+import visualStudio from "../../assets/icons/visual-studio.svg";
 import "./introduction.css";
 import InformationSummary from "./InformationSummary";
 
@@ -22,16 +32,16 @@ const informationSummaryData = [
 ];
 
 const techIcons = [
-  { id: 1, src: "../../assets/icons/android-studio.svg", alt: "Android" },
-  { id: 2, src: "../../assets/icons/kotlin.svg", alt: "Kotlin" },
-  { id: 3, src: "../../assets/icons/java.svg", alt: "Java" },
-  { id: 4, src: "../../assets/icons/compose.svg", alt: "Compose" },
-  { id: 5, src: "../../assets/icons/graphql.svg", alt: "GraphQL" },
-  { id: 6, src: "../../assets/icons/firebase.svg", alt: "Firebase" },
-  { id: 7, src: "../../assets/icons/figma.svg", alt: "Figma" },
-  { id: 8, src: "../../assets/icons/adobe-photoshop.svg", alt: "Photoshop" },
-  {id: 9, src: "../../assets/icons/adobe-illustrator.svg", alt: "Illustrator" },
-  {id: 10, src: "../../assets/icons/visual-studio.svg", alt: "Visual Studio" },
+  { id: 1, src: androidStudio, alt: "Android Studio" },
+  { id: 2, src: kotlin, alt: "Kotlin" },
+  { id: 3, src: java, alt: "Java" },
+  { id: 4, src: compose, alt: "Jetpack Compose" },
+  { id: 5, src: graphql, alt: "GraphQL" },
+  { id: 6, src: firebase, alt: "Firebase" },
+  { id: 7, src: figma, alt: "Figma" },
+  { id: 8, src: photoshop, alt: "Photoshop" },
+  { id: 9, src: illustrator, alt: "Illustrator" },
+  { id: 10, src: visualStudio, alt: "Visual Studio" },
 ];
 
 const Introduction = () => {
@@ -63,7 +73,7 @@ const Introduction = () => {
         <div className="flex flex-wrap gap-4 mt-6">
             {techIcons.map((icon) => (
               <div className="bg-white shadow-md rounded-xl p-2 hover:scale-110 transition">
-                <img src={icon.src} alt={icon.name} className="h-8 sm:h-10" />
+                <img src={icon.src} alt={icon.alt} className="h-8 sm:h-10" />
               </div>
             ))}
         </div>
